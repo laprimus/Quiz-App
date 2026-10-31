@@ -2,8 +2,7 @@
 
 A 10-question multiple-choice quiz on HTML, CSS and JavaScript, built with plain HTML, CSS and vanilla JavaScript. No frameworks and no build step.
 
-<!-- Add your live link here once the app is hosted, for example with GitHub Pages:
-**Live demo:** https://your-username.github.io/your-repo-name/ -->
+**Live demo:** https://laprimus.github.io/Quiz-App/
 
 ![Quiz question screen](screenshots/question.png)
 
