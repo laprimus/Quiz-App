@@ -1,0 +1,218 @@
+/* ==========================================================
+   Web Basics Quiz — styles
+   ========================================================== */
+
+:root {
+  --color-bg: #eef2ff;
+  --color-card: #ffffff;
+  --color-text: #1e1b4b;
+  --color-muted: #6b7280;
+  --color-primary: #4f46e5;
+  --color-primary-dark: #3730a3;
+  --color-border: #d1d5db;
+  --color-correct: #16a34a;
+  --color-correct-bg: #dcfce7;
+  --color-wrong: #dc2626;
+  --color-wrong-bg: #fee2e2;
+  --font-main: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  line-height: 1.5;
+}
+
+.quiz {
+  width: 100%;
+  max-width: 640px;
+  background: var(--color-card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(30, 27, 75, 0.15);
+  padding: 2rem;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--color-muted);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------- Progress ---------- */
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+/* ---------- Question and options ---------- */
+.question-text {
+  font-size: 1.35rem;
+  margin: 0 0 1.25rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.option {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: var(--color-card);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.option:hover:not(:disabled),
+.option:focus-visible {
+  border-color: var(--color-primary);
+  background: #f5f3ff;
+  outline: none;
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+/* Immediate feedback colours */
+.option.correct {
+  border-color: var(--color-correct);
+  background: var(--color-correct-bg);
+  color: #14532d;
+  font-weight: 600;
+}
+
+.option.wrong {
+  border-color: var(--color-wrong);
+  background: var(--color-wrong-bg);
+  color: #7f1d1d;
+  font-weight: 600;
+}
+
+.feedback {
+  min-height: 1.5rem;
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.feedback.good { color: var(--color-correct); }
+.feedback.bad { color: var(--color-wrong); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover:not(:disabled),
+.btn:focus-visible {
+  background: var(--color-primary-dark);
+}
+
+.btn:disabled {
+  background: var(--color-border);
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+/* ---------- Result screen ---------- */
+#result-screen {
+  text-align: center;
+}
+
+.final-score {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  color: var(--color-primary);
+}
+
+.result-message {
+  font-size: 1.15rem;
+  margin: 0 0 1.5rem;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .quiz {
+    padding: 1.25rem;
+  }
+
+  .quiz-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .question-text {
+    font-size: 1.15rem;
+  }
+
+  .option {
+    padding: 0.85rem;
+  }
+}
