@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Basics Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main class="quiz">
+    <header class="quiz-header">
+      <h1>Web Basics Quiz</h1>
+      <p class="subtitle">HTML, CSS and JavaScript</p>
+    </header>
+
+    <!-- Question screen -->
+    <section id="question-screen" aria-live="polite">
+      <div class="progress-info">
+        <span id="question-count">Question 1 of 10</span>
+        <span id="score-display">Score: 0</span>
+      </div>
+      <div class="progress-bar" aria-hidden="true">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+
+      <h2 id="question-text" class="question-text"></h2>
+
+      <div id="options" class="options"></div>
+
+      <p id="feedback" class="feedback" role="status"></p>
+
+      <button id="next-btn" class="btn" type="button" disabled>Next question</button>
+    </section>
+
+    <!-- Result screen -->
+    <section id="result-screen" class="hidden">
+      <h2>Quiz complete!</h2>
+      <p class="final-score"><span id="final-score">0</span> / <span id="total-questions">10</span></p>
+      <p id="result-message" class="result-message"></p>
+      <button id="restart-btn" class="btn" type="button">Restart quiz</button>
+    </section>
+  </main>
+
+  <script src="js/quiz.js"></script>
+</body>
+</html>
