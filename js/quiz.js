@@ -1,9 +1,4 @@
-// ==========================================================
-// Web Basics Quiz
-// ==========================================================
-
 // 1. The questions: an array of objects.
-//    "correct" is the index (starting at 0) of the right option.
 const questions = [
   {
     question: "What does HTML stand for?",
@@ -67,7 +62,7 @@ const questions = [
   }
 ];
 
-// 2. Grab the page elements we need to update.
+// 2. Grab the page elements to update.
 const questionScreen = document.getElementById("question-screen");
 const resultScreen = document.getElementById("result-screen");
 const questionCount = document.getElementById("question-count");
